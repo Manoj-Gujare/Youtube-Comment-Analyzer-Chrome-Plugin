@@ -1,10 +1,12 @@
 import json
 import mlflow
+import dagshub
 import logging
 import os
 
 # Set up MLflow tracking URI
-mlflow.set_tracking_uri("http://ec2-54-196-109-131.compute-1.amazonaws.com:5000/")
+dagshub.init(repo_owner='Manoj-Gujare', repo_name='Youtube-Comment-Analyzer-Chrome-Plugin', mlflow=True)
+mlflow.set_tracking_uri("https://dagshub.com/Manoj-Gujare/Youtube-Comment-Analyzer-Chrome-Plugin.mlflow")
 
 
 # logging configuration

@@ -4,6 +4,7 @@ import pickle
 import logging
 import yaml
 import mlflow
+import dagshub
 import mlflow.sklearn
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -127,8 +128,9 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 
 
 def main():
-    mlflow.set_tracking_uri("http://ec2-54-196-109-131.compute-1.amazonaws.com:5000/")
 
+    dagshub.init(repo_owner='Manoj-Gujare', repo_name='Youtube-Comment-Analyzer-Chrome-Plugin', mlflow=True)
+    mlflow.set_tracking_uri("https://dagshub.com/Manoj-Gujare/Youtube-Comment-Analyzer-Chrome-Plugin.mlflow")
     mlflow.set_experiment('dvc-pipeline-runs')
     
     with mlflow.start_run() as run:
