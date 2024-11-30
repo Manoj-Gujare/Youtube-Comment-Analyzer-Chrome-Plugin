@@ -1,2 +1,3 @@
-['remote "myremote"']
-    url = C:\Windows\Temp
+['remote "origin"']
+    url = s3://dvc
+    endpointurl = https://dagshub.com/Manoj-Gujare/Youtube-Comment-Analyzer-Chrome-Plugin.s3
